@@ -4,7 +4,7 @@ Console.WriteLine("Gestione Biblioteca");
 
 Console.WriteLine("Inserimento libri");
 
-Libro[] biblioteca = new Libro[500];
+Rivista[] biblioteca = new Rivista[500];
 int indice = 0;
 
 bool continua = true;
@@ -12,30 +12,32 @@ while (continua)
 {
     // sintassi di creazione di un oggetto
     // da una classe
-    Libro oggettoLibro = new Libro();
+    Rivista oggettoRivista = new Rivista();
 
     Console.Write("Inserisci il titolo:");
-    oggettoLibro.Titolo = Console.ReadLine();
+    oggettoRivista.Titolo = Console.ReadLine();
 
     Console.Write("Inserisci il autore:");
-    oggettoLibro.Autore = Console.ReadLine();
+    oggettoRivista.Autore = Console.ReadLine();
     
     Console.Write("Inserisci il numero di pagine:");
-    oggettoLibro.Pagine = int.Parse(Console.ReadLine());
+    oggettoRivista.Pagine = int.Parse(Console.ReadLine());
     
     Console.Write("Inserisci il prezzo:");
-    oggettoLibro.Prezzo = decimal.Parse(Console.ReadLine());
+    oggettoRivista.Prezzo = decimal.Parse(Console.ReadLine());
 
     Console.WriteLine("Il prezzo in dollari sarà: " 
-                        + oggettoLibro.PrezzoInDollari());
+                        + oggettoRivista.PrezzoInDollari());
 
-    biblioteca[indice] = oggettoLibro;
+    biblioteca[indice] = oggettoRivista;
     indice++;
 
-    Console.WriteLine("Vuoi inserire un altro libro (S/N)?");
+    Console.WriteLine("Vuoi inserire un altro Rivista (S/N)?");
     string risposta = Console.ReadLine();
     if (risposta == "N") continua = false;
-
 }
+
+// creo un libro con parametri
+Libro ilMilione = new Libro("Il Milione", "Marco Polo", 100, 15.50m);
 
 
