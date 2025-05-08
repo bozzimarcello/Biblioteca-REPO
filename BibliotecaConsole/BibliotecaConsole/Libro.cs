@@ -9,7 +9,21 @@ namespace BibliotecaConsole
     class Libro
     {
         // proprietà
-        public string Titolo { get; set; }
+        public string Titolo 
+        { 
+            get { return Titolo; } 
+            set 
+            {
+                if(value.Length > 0)
+                {
+                    Titolo = value;
+                }
+                else
+                {
+                    Titolo = "Titolo non valido";
+                }
+            } 
+        }
         public string Autore { get; set; }
         public int Pagine { get; set; }
         public decimal Prezzo { get; set; }
